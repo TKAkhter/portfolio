@@ -1,51 +1,39 @@
-import { Container, ContainerSucces } from './styles'
-import { useForm, ValidationError } from '@formspree/react'
+import { Container } from './styles'
 import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 import ReCAPTCHA from 'react-google-recaptcha'
-import { useEffect, useState } from 'react'
-import validator from 'validator';
+import { useState } from 'react'
+import emailjs from '@emailjs/browser';
 
 export function Form() {
-  const [state, handleSubmit] = useForm('myyozglw')
-
-  const [validEmail, setValidEmail] = useState(false)
+  const [formData, setFormData] = useState({
+    email: '',
+    message: ''
+  });
   const [isHuman, setIsHuman] = useState(false)
-  const [message, setMessage] = useState('')
 
-  function verifyEmail(email: string) {
-    if (validator.isEmail(email)) {
-      setValidEmail(true)
-    } else {
-      setValidEmail(false)
-    }
-  }
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
 
-  useEffect(() => {
-    if (state.succeeded) {
-      toast.success('Email successfully sent!', {
-        position: toast.POSITION.BOTTOM_LEFT,
-        pauseOnFocusLoss: false,
-        closeOnClick: true,
-        hideProgressBar: false,
-        toastId: 'succeeded',
-      })
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      await emailjs.sendForm(process.env.REACT_APP_EMAIL_SERVICE_ID as string, process.env.REACT_APP_EMAIL_TEMPLATE_ID as string, e.currentTarget, process.env.REACT_APP_EMAIL_PUBLIC_KEY);
+      toast.success('Message sent successfully!');
+      setFormData({
+        email: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast.error('Failed to send message. Please try again later.');
     }
-  })
-  if (state.succeeded) {
-    return (
-      <ContainerSucces>
-        <h3>Thank you for contacting us!</h3>
-        <button
-          onClick={() => {
-            window.scrollTo({ top: 0, behavior: 'smooth' })
-          }}
-        >
-          Back to the top
-        </button>
-        <ToastContainer />
-      </ContainerSucces>
-    )
-  }
+  };
 
   return (
     <Container>
@@ -56,25 +44,15 @@ export function Form() {
           id="email"
           type="email"
           name="email"
-          onChange={(e) => {
-            verifyEmail(e.target.value)
-          }}
+          value={formData.email} onChange={handleChange}
           required
         />
-        <ValidationError prefix="Email" field="email" errors={state.errors} />
         <textarea
           required
           placeholder="Leave your message"
           id="message"
           name="message"
-          onChange={(e) => {
-            setMessage(e.target.value)
-          }}
-        />
-        <ValidationError
-          prefix="Message"
-          field="message"
-          errors={state.errors}
+          value={formData.message} onChange={handleChange}
         />
         {process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY ?
           <ReCAPTCHA
@@ -85,12 +63,22 @@ export function Form() {
           ></ReCAPTCHA> : null}
         <button
           type="submit"
-          disabled={state.submitting || !validEmail || !message || !isHuman}
+          disabled={!isHuman}
         >
           To Send
         </button>
       </form>
-      <ToastContainer />
+      <ToastContainer
+        position="bottom-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light" />
     </Container>
   )
 }

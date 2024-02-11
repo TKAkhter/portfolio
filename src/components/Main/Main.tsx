@@ -16,6 +16,7 @@ import sassIcon from "../../assets/sass-icon.svg";
 import typescriptIcon from "../../assets/typescript-icon.svg";
 import vscodeIcon from "../../assets/vscode-icon.svg";
 import vueIcon from "../../assets/vue-icon.svg";
+import ScrollButton from "../ScrollToTop/ScrollToTop";
 
 
 export function Main(){
@@ -252,6 +253,7 @@ export function Main(){
       <About></About>
       <Portfolio></Portfolio>
       <Contact></Contact>
+      <ScrollButton />
     </Container>
   );
 }
