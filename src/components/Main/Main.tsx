@@ -1,8 +1,4 @@
 import Particles from "react-tsparticles";
-import { Hero } from "../Hero/Hero";
-import { About } from "../About/About";
-import { Contact } from "../Contact/Contact";
-import { Portfolio } from "../Portfolio/Portfolio";
 
 import boostrapIcon from "../../assets/bootstrap-icon.svg";
 import cssIcon from "../../assets/css-icon.svg";
@@ -15,7 +11,12 @@ import sassIcon from "../../assets/sass-icon.svg";
 import typescriptIcon from "../../assets/typescript-icon.svg";
 import vscodeIcon from "../../assets/vscode-icon.svg";
 import vueIcon from "../../assets/vue-icon.svg";
+import { About } from "../About/About";
+import { Contact } from "../Contact/Contact";
+import { Hero } from "../Hero/Hero";
+import { Portfolio } from "../Portfolio/Portfolio";
 import ScrollButton from "../ScrollToTop/ScrollToTop";
+
 import { Container } from "./styles";
 
 export function Main() {

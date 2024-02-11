@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaArrowCircleUp } from "react-icons/fa";
+
 import { ToTop } from "./ScrollToTop.styles";
 
 export const ScrollToTop = () => {
@@ -14,7 +15,7 @@ export const ScrollToTop = () => {
     }
   };
 
-  const scrollToTop = () => {
+  const scrollToTopAction = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -26,10 +27,11 @@ export const ScrollToTop = () => {
   return (
     <>
       <ToTop>
-        <FaArrowCircleUp onClick={scrollToTop} style={{ display: visible ? "inline" : "none" }} />
+        <FaArrowCircleUp
+          onClick={scrollToTopAction}
+          style={{ display: visible ? "inline" : "none" }}
+        />
       </ToTop>
     </>
   );
 };
-
-export default ScrollToTop;

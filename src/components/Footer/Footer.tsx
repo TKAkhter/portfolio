@@ -1,6 +1,7 @@
-import linkedinIcon from "../../assets/linkedin.png";
 import githubIcon from "../../assets/github.png";
 import instagramIcon from "../../assets/instagram.png";
+import linkedinIcon from "../../assets/linkedin.png";
+
 import { Container } from "./styles";
 
 export function Footer() {

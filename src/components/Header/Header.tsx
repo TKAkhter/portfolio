@@ -1,8 +1,9 @@
-import { BrowserRouter as Router } from "react-router-dom";
-import { NavHashLink, HashLink } from "react-router-hash-link";
 import { useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { HashLink, NavHashLink } from "react-router-hash-link";
 
 import Curriculo from "../../assets/CV-Talha-Akhter-Full-Stack-Software-Engineer.pdf";
+
 import { Container } from "./styles";
 export function Header() {
   const [isActive, setActive] = useState(false);

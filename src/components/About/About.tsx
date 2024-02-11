@@ -1,12 +1,14 @@
 import ScrollAnimation from "react-animate-on-scroll";
+
 import cssIcon from "../../assets/css-icon.svg";
 import htmlIcon from "../../assets/html-icon.svg";
 import jsIcon from "../../assets/js-icon.svg";
 import nodeIcon from "../../assets/node-icon.svg";
+import ProfilePic from "../../assets/profile-pic.jpg";
 import reactIcon from "../../assets/react-icon.svg";
 import typescriptIcon from "../../assets/typescript-icon.svg";
 import vueIcon from "../../assets/vue-icon.svg";
-import ProfilePic from "../../assets/profile-pic.jpg";
+
 import { Container } from "./styles";
 
 export function About() {

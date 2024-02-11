@@ -1,7 +1,8 @@
-import { toast, ToastContainer } from "react-toastify";
-import ReCAPTCHA from "react-google-recaptcha";
-import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useState } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
+import { ToastContainer, toast } from "react-toastify";
+
 import { Container } from "./styles";
 import "react-toastify/dist/ReactToastify.css";
 
