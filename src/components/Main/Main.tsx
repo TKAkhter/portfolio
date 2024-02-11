@@ -15,7 +15,7 @@ import { About } from "../About/About";
 import { Contact } from "../Contact/Contact";
 import { Hero } from "../Hero/Hero";
 import { Portfolio } from "../Portfolio/Portfolio";
-import ScrollButton from "../ScrollToTop/ScrollToTop";
+import { ScrollToTop } from "../ScrollToTop/ScrollToTop";
 
 import { Container } from "./styles";
 
@@ -251,7 +251,7 @@ export function Main() {
       <About></About>
       <Portfolio></Portfolio>
       <Contact></Contact>
-      <ScrollButton />
+      <ScrollToTop />
     </Container>
   );
 }
