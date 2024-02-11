@@ -1,5 +1,4 @@
-import { Container } from "./styles";
-
+import ScrollAnimation from "react-animate-on-scroll";
 import cssIcon from "../../assets/css-icon.svg";
 import htmlIcon from "../../assets/html-icon.svg";
 import jsIcon from "../../assets/js-icon.svg";
@@ -7,8 +6,8 @@ import nodeIcon from "../../assets/node-icon.svg";
 import reactIcon from "../../assets/react-icon.svg";
 import typescriptIcon from "../../assets/typescript-icon.svg";
 import vueIcon from "../../assets/vue-icon.svg";
-import ScrollAnimation from "react-animate-on-scroll";
 import ProfilePic from "../../assets/profile-pic.jpg";
+import { Container } from "./styles";
 
 export function About() {
   return (
@@ -18,16 +17,29 @@ export function About() {
           <h2>About me</h2>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.2 * 1000}>
-          <p> My name is Talha Akhter, I am a computer technician with a great passion for programming. I am passionate about delivering solutions that add to people's lives and at the same time challenge me. I improved my skills as a Front-End and Back-End developer</p>
-        </ScrollAnimation>
-        <ScrollAnimation animateIn="fadeInLeft" delay={0.4 * 1000} style={{ marginTop: "2rem", marginBottom: "2rem" }}>
           <p>
-            I develop websites and applications using HTML, CSS, and JavaScript. I am familiar with developing layouts that provide me. I'm always improving myself with each project they put in my hands.
+            {" "}
+            My name is Talha Akhter, I am a computer technician with a great passion for
+            programming. I am passionate about delivering solutions that add to people&lsquo;s lives
+            and at the same time challenge me. I improved my skills as a Front-End and Back-End
+            developer
+          </p>
+        </ScrollAnimation>
+        <ScrollAnimation
+          animateIn="fadeInLeft"
+          delay={0.4 * 1000}
+          style={{ marginTop: "2rem", marginBottom: "2rem" }}
+        >
+          <p>
+            I develop websites and applications using HTML, CSS, and JavaScript. I am familiar with
+            developing layouts that provide me. I&lsquo;m always improving myself with each project
+            they put in my hands.
           </p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInLeft" delay={0.6 * 1000}>
           <p>
-            I am a dedicated person who strives to make my dreams come true, hardworking and results-oriented, I always seek to achieve the best version of myself.
+            I am a dedicated person who strives to make my dreams come true, hardworking and
+            results-oriented, I always seek to achieve the best version of myself.
           </p>
         </ScrollAnimation>
 
@@ -35,7 +47,6 @@ export function About() {
           <h3>Here are my main skills:</h3>
         </ScrollAnimation>
         <div className="hard-skills">
-
           <div className="hability">
             <ScrollAnimation animateIn="fadeInUp" delay={0.1 * 1000}>
               <img src={reactIcon} alt="React" />
@@ -76,8 +87,6 @@ export function About() {
               <img src={typescriptIcon} alt="Typescript" />
             </ScrollAnimation>
           </div>
-
-
         </div>
       </div>
       <div className="about-image">
@@ -86,5 +95,5 @@ export function About() {
         </ScrollAnimation>
       </div>
     </Container>
-  )
+  );
 }

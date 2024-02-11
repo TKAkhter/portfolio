@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaArrowCircleUp } from "react-icons/fa";
 import { ToTop } from "./ScrollToTop.styles";
 
-export const ScrollButton = () => {
+export const ScrollToTop = () => {
   const [visible, setVisible] = useState(false);
 
   const toggleVisible = () => {
@@ -26,13 +26,10 @@ export const ScrollButton = () => {
   return (
     <>
       <ToTop>
-        <FaArrowCircleUp
-          onClick={scrollToTop}
-          style={{ display: visible ? "inline" : "none" }}
-        />
+        <FaArrowCircleUp onClick={scrollToTop} style={{ display: visible ? "inline" : "none" }} />
       </ToTop>
     </>
   );
 };
 
-export default ScrollButton;
+export default ScrollToTop;

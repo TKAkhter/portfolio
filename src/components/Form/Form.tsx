@@ -1,37 +1,41 @@
-import { Container } from './styles'
-import { toast, ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css';
-import ReCAPTCHA from 'react-google-recaptcha'
-import { useState } from 'react'
-import emailjs from '@emailjs/browser';
+import { toast, ToastContainer } from "react-toastify";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { Container } from "./styles";
+import "react-toastify/dist/ReactToastify.css";
 
 export function Form() {
   const [formData, setFormData] = useState({
-    email: '',
-    message: ''
+    email: "",
+    message: "",
   });
-  const [isHuman, setIsHuman] = useState(false)
+  const [isHuman, setIsHuman] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prevState => ({
+    setFormData((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await emailjs.sendForm(process.env.REACT_APP_EMAIL_SERVICE_ID as string, process.env.REACT_APP_EMAIL_TEMPLATE_ID as string, e.currentTarget, process.env.REACT_APP_EMAIL_PUBLIC_KEY);
-      toast.success('Message sent successfully!');
+      await emailjs.sendForm(
+        process.env.REACT_APP_EMAIL_SERVICE_ID as string,
+        process.env.REACT_APP_EMAIL_TEMPLATE_ID as string,
+        e.currentTarget,
+        process.env.REACT_APP_EMAIL_PUBLIC_KEY,
+      );
+      toast.success("Message sent successfully!");
       setFormData({
-        email: '',
-        message: ''
+        email: "",
+        message: "",
       });
     } catch (error) {
-      console.error('Error sending message:', error);
-      toast.error('Failed to send message. Please try again later.');
+      toast.error("Failed to send message. Please try again later.");
     }
   };
 
@@ -44,7 +48,8 @@ export function Form() {
           id="email"
           type="email"
           name="email"
-          value={formData.email} onChange={handleChange}
+          value={formData.email}
+          onChange={handleChange}
           required
         />
         <textarea
@@ -52,19 +57,18 @@ export function Form() {
           placeholder="Leave your message"
           id="message"
           name="message"
-          value={formData.message} onChange={handleChange}
+          value={formData.message}
+          onChange={handleChange}
         />
-        {process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY ?
+        {process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY ? (
           <ReCAPTCHA
             sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY as string}
             onChange={(_) => {
-              setIsHuman(true)
+              setIsHuman(true);
             }}
-          ></ReCAPTCHA> : null}
-        <button
-          type="submit"
-          disabled={!isHuman}
-        >
+          ></ReCAPTCHA>
+        ) : null}
+        <button type="submit" disabled={!isHuman}>
           To Send
         </button>
       </form>
@@ -78,7 +82,8 @@ export function Form() {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="light" />
+        theme="light"
+      />
     </Container>
-  )
+  );
 }

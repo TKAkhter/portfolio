@@ -1,8 +1,7 @@
-import { Container } from './styles'
-
-import linkedinIcon from '../../assets/linkedin.png'
-import githubIcon from '../../assets/github.png'
-import instagramIcon from '../../assets/instagram.png'
+import linkedinIcon from "../../assets/linkedin.png";
+import githubIcon from "../../assets/github.png";
+import instagramIcon from "../../assets/instagram.png";
+import { Container } from "./styles";
 
 export function Footer() {
   return (
@@ -20,22 +19,14 @@ export function Footer() {
           <img src={linkedinIcon} alt="Linkedin" />
         </a>
 
-        <a
-          href="https://github.com/TKAkhter/"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://github.com/TKAkhter/" target="_blank" rel="noreferrer">
           <img src={githubIcon} alt="GitHub" />
         </a>
 
-        <a
-          href="https://www.instagram.com/talha.akhter.146/"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://www.instagram.com/talha.akhter.146/" target="_blank" rel="noreferrer">
           <img src={instagramIcon} alt="Instagram" />
         </a>
       </div>
     </Container>
-  )
+  );
 }
