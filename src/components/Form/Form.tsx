@@ -76,12 +76,13 @@ export function Form() {
           field="message"
           errors={state.errors}
         />
-        <ReCAPTCHA
-          sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY as string}
-          onChange={(_) => {
-            setIsHuman(true)
-          }}
-        ></ReCAPTCHA>
+        {process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY ?
+          <ReCAPTCHA
+            sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY as string}
+            onChange={(_) => {
+              setIsHuman(true)
+            }}
+          ></ReCAPTCHA> : null}
         <button
           type="submit"
           disabled={state.submitting || !validEmail || !message || !isHuman}

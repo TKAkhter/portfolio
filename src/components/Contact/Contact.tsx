@@ -8,7 +8,7 @@ export function Contact(){
 
   return(
     <Container id="contact">
-      <header>service_ia4kqw4 template_1n0oak1
+      <header>
         <h2>Contact me</h2>
         {process.env.EMAIL_SERVICE_ID}
         <p>If you saw my potential or want to talk to me, don't hesitate to send me a message.</p>
