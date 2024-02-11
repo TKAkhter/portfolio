@@ -1,5 +1,5 @@
 import { Container } from "./styles";
-import githubIcon from "../../assets/github-icon.svg"
+// import githubIcon from "../../assets/github-icon.svg"
 import externalLinkIcon from "../../assets/external-link-icon.svg"
 import ScrollAnimation from "react-animate-on-scroll";
 
