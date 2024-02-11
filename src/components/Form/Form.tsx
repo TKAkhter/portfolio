@@ -3,7 +3,7 @@ import { useForm, ValidationError } from '@formspree/react'
 import { toast, ToastContainer } from 'react-toastify'
 import ReCAPTCHA from 'react-google-recaptcha'
 import { useEffect, useState } from 'react'
-import validator from 'validator'
+import validator from 'validator';
 
 export function Form() {
   const [state, handleSubmit] = useForm('myyozglw')
@@ -77,7 +77,7 @@ export function Form() {
           errors={state.errors}
         />
         <ReCAPTCHA
-          sitekey="6LcAu-IdAAAAAJOTI5E_eRltZNQCvukIl2-f1glQ"
+          sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY as string}
           onChange={(_) => {
             setIsHuman(true)
           }}
