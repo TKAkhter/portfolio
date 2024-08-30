@@ -8,7 +8,7 @@ export const ToTop = styled.div`
   font-size: 3rem;
   z-index: 99;
   cursor: pointer;
-  color: yellowgreen;
+  color: #23ce6b;
   opacity: 50%;
 
   @media screen and (max-width: 768px) {

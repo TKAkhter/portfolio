@@ -19,13 +19,13 @@ export const Container = styled.section`
 
     .project {
       padding: 2rem 1.8rem;
-      background-color: #2b2b2b;
+      border: 2px solid #23ce6b;
+      font-weight: 500;
       border-radius: 1.2rem;
       transition: 0.25s;
       display: flex;
       flex-direction: column;
       height: 100%;
-      color: #fff;
       &:hover {
         transform: translateY(-5px);
         background-color: var(--pink);

@@ -41,10 +41,10 @@ export const Container = styled.section`
   }
 
   .about-image {
-    text-align: center;
+    text-align: end;
     img {
-      margin-top: 2rem;
-      width: 100%;
+      border-radius: 100%;
+      max-height: 400px;
       filter: grayscale(1);
       transition: filter 0.5s;
       &:hover {
@@ -66,6 +66,7 @@ export const Container = styled.section`
 
     .about-image {
       display: flex;
+      justify-content: center;
     }
     .hard-skills {
       justify-content: center;

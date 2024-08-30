@@ -17,6 +17,14 @@ export const GlobalStyle = createGlobalStyle`
         color: var(--black);
       }
 
+      a {
+        color: var(--black);
+      }
+
+      .contacts img {
+        filter: invert(0);
+      }
+
       .logo{
         color: var(--black);
       }
@@ -81,6 +89,15 @@ export const GlobalStyle = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     background-color: var(--black);
     color: #FFFF;
+  }
+
+  a {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .contacts img {
+    filter: invert(1);
   }
 
   body, input, textarea, button{

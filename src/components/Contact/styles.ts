@@ -36,15 +36,9 @@ export const Container = styled.section`
       img {
         width: 4rem;
       }
-      a {
-        color: var(--black);
-        font-weight: 500;
-      }
       &:hover {
-        background-color: var(--pink);
-        a {
-          color: #fff;
-        }
+        filter: brightness(0.6);
+        transition: 0.5s;
       }
     }
   }

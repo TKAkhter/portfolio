@@ -11,6 +11,20 @@ import sassIcon from "../../assets/sass-icon.svg";
 import typescriptIcon from "../../assets/typescript-icon.svg";
 import vscodeIcon from "../../assets/vscode-icon.svg";
 import vueIcon from "../../assets/vue-icon.svg";
+import phpIcon from "../../assets/php-icon.svg";
+import nextIcon from "../../assets/nextjs-icon.svg";
+import reduxIcon from "../../assets/redux-icon.svg";
+import bootstrapIcon from "../../assets/bootstrap-icon.svg";
+import expressIcon from "../../assets/expressjs-icon.svg";
+import mongodbIcon from "../../assets/mongodb-icon.svg";
+import jqueryIcon from "../../assets/jquery-icon.svg";
+import nestjsIcon from "../../assets/nestjs-icon.svg";
+import postgresIcon from "../../assets/postgres-icon.svg";
+import wordpressIcon from "../../assets/wordpress-icon.svg";
+import firebaseIcon from "../../assets/firebase-icon.svg";
+import jestIcon from "../../assets/jest-icon.svg";
+import redisIcon from "../../assets/redis-icon.svg";
+import playwrightIcon from "../../assets/playwright-icon.svg";
 import { About } from "../About/About";
 import { Contact } from "../Contact/Contact";
 import { Hero } from "../Hero/Hero";
@@ -203,6 +217,81 @@ export function Main() {
                 },
                 {
                   src: vueIcon,
+                  width: 20,
+                  height: 20,
+                },
+                {
+                  src: phpIcon,
+                  width: 20,
+                  height: 20,
+                },
+                {
+                  src: nextIcon,
+                  width: 20,
+                  height: 20,
+                },
+                {
+                  src: bootstrapIcon,
+                  width: 20,
+                  height: 20,
+                },
+                {
+                  src: nextIcon,
+                  width: 20,
+                  height: 20,
+                },
+                {
+                  src: redisIcon,
+                  width: 20,
+                  height: 20,
+                },
+                {
+                  src: playwrightIcon,
+                  width: 20,
+                  height: 20,
+                },
+                {
+                  src: firebaseIcon,
+                  width: 20,
+                  height: 20,
+                },
+                {
+                  src: jestIcon,
+                  width: 20,
+                  height: 20,
+                },
+                {
+                  src: wordpressIcon,
+                  width: 20,
+                  height: 20,
+                },
+                {
+                  src: postgresIcon,
+                  width: 60,
+                  height: 40,
+                },
+                {
+                  src: jqueryIcon,
+                  width: 20,
+                  height: 20,
+                },
+                {
+                  src: nestjsIcon,
+                  width: 60,
+                  height: 40,
+                },
+                {
+                  src: expressIcon,
+                  width: 60,
+                  height: 40,
+                },
+                {
+                  src: mongodbIcon,
+                  width: 20,
+                  height: 20,
+                },
+                {
+                  src: reduxIcon,
                   width: 20,
                   height: 20,
                 },
