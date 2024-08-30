@@ -1,30 +1,29 @@
 import Particles from "react-tsparticles";
 
-import boostrapIcon from "../../assets/bootstrap-icon.svg";
+import bootstrapIcon from "../../assets/bootstrap-icon.svg";
 import cssIcon from "../../assets/css-icon.svg";
+import expressIcon from "../../assets/expressjs-icon.svg";
+import firebaseIcon from "../../assets/firebase-icon.svg";
 import htmlIcon from "../../assets/html-icon.svg";
+import jestIcon from "../../assets/jest-icon.svg";
+import jqueryIcon from "../../assets/jquery-icon.svg";
 import jsIcon from "../../assets/js-icon.svg";
+import mongodbIcon from "../../assets/mongodb-icon.svg";
 import mysqlIcon from "../../assets/mysql-icon.svg";
+import nestjsIcon from "../../assets/nestjs-icon.svg";
+import nextIcon from "../../assets/nextjs-icon.svg";
 import nodeIcon from "../../assets/node-icon.svg";
+import phpIcon from "../../assets/php-icon.svg";
+import playwrightIcon from "../../assets/playwright-icon.svg";
+import postgresIcon from "../../assets/postgres-icon.svg";
 import reactIcon from "../../assets/react-icon.svg";
+import redisIcon from "../../assets/redis-icon.svg";
+import reduxIcon from "../../assets/redux-icon.svg";
 import sassIcon from "../../assets/sass-icon.svg";
 import typescriptIcon from "../../assets/typescript-icon.svg";
 import vscodeIcon from "../../assets/vscode-icon.svg";
 import vueIcon from "../../assets/vue-icon.svg";
-import phpIcon from "../../assets/php-icon.svg";
-import nextIcon from "../../assets/nextjs-icon.svg";
-import reduxIcon from "../../assets/redux-icon.svg";
-import bootstrapIcon from "../../assets/bootstrap-icon.svg";
-import expressIcon from "../../assets/expressjs-icon.svg";
-import mongodbIcon from "../../assets/mongodb-icon.svg";
-import jqueryIcon from "../../assets/jquery-icon.svg";
-import nestjsIcon from "../../assets/nestjs-icon.svg";
-import postgresIcon from "../../assets/postgres-icon.svg";
 import wordpressIcon from "../../assets/wordpress-icon.svg";
-import firebaseIcon from "../../assets/firebase-icon.svg";
-import jestIcon from "../../assets/jest-icon.svg";
-import redisIcon from "../../assets/redis-icon.svg";
-import playwrightIcon from "../../assets/playwright-icon.svg";
 import { About } from "../About/About";
 import { Contact } from "../Contact/Contact";
 import { Hero } from "../Hero/Hero";
@@ -166,7 +165,7 @@ export function Main() {
               },
               image: [
                 {
-                  src: boostrapIcon,
+                  src: bootstrapIcon,
                   width: 20,
                   height: 20,
                 },
@@ -227,11 +226,6 @@ export function Main() {
                 },
                 {
                   src: nextIcon,
-                  width: 20,
-                  height: 20,
-                },
-                {
-                  src: bootstrapIcon,
                   width: 20,
                   height: 20,
                 },
