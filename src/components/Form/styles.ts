@@ -41,6 +41,20 @@ export const Container = styled.div`
       padding: 1rem 6rem;
       text-transform: uppercase;
     }
+      
+    .spinner {
+      border: 3px solid rgba(0, 0, 0, 0.1);
+      border-left-color: #000;
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
   }
 
   @media (max-width: 740px) {

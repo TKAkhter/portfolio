@@ -1,5 +1,5 @@
 import emailjs from "@emailjs/browser";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { ToastContainer, toast } from "react-toastify";
 
@@ -7,11 +7,13 @@ import { Container } from "./styles";
 import "react-toastify/dist/ReactToastify.css";
 
 export function Form() {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     message: "",
   });
   const [isHuman, setIsHuman] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -23,6 +25,7 @@ export function Form() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
     try {
       await emailjs.sendForm(
         process.env.REACT_APP_EMAIL_SERVICE_ID as string,
@@ -37,6 +40,12 @@ export function Form() {
       });
     } catch (error) {
       toast.error("Failed to send message. Please try again later.");
+    } finally {
+      setLoading(false);
+      setIsHuman(false);
+      if (recaptchaRef.current) {
+        recaptchaRef.current.reset(); // Reset reCAPTCHA
+      }
     }
   };
 
@@ -63,14 +72,17 @@ export function Form() {
         />
         {process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY ? (
           <ReCAPTCHA
+            ref={recaptchaRef}
             sitekey={process.env.REACT_APP_GOOGLE_RECAPTCHA_SITE_KEY as string}
-            onChange={(_) => {
-              setIsHuman(true);
-            }}
-          ></ReCAPTCHA>
+            onChange={(_) => setIsHuman(true)}
+          />
         ) : null}
-        <button type="submit" disabled={!isHuman}>
-          To Send
+        <button type="submit" disabled={!isHuman || loading}>
+          {loading ? (
+            <div className="spinner"></div>
+          ) : (
+            "Send"
+          )}
         </button>
       </form>
       <ToastContainer
